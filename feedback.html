@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Student Feedback Form</h3>
+
+<form onsubmit="return submitForm()">
+
+Name: <input type="text" id="name"><br><br>
+Course: <input type="text" id="course"><br><br>
+
+Rating:
+<select id="rating">
+  <option value="">Select</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select><br><br>
+
+Comments:<br>
+<textarea id="comments"></textarea><br><br>
+
+Upload File: <input type="file" id="file"><br><br>
+
+<button type="submit">Submit</button>
+</form>
+
+<script>
+function submitForm() {
+  if (
+    name.value == "" ||
+    course.value == "" ||
+    rating.value == "" ||
+    comments.value == "" ||
+    file.value == ""
+  ) {
+    alert("All fields are required");
+    return false;
+  }
+
+  console.log(name.value, course.value, rating.value, comments.value, file.value);
+  alert("Feedback submitted successfully");
+
+  return false; // stop refresh
+}
+</script>
+
+</body>
+</html>
